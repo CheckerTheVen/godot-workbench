@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c677w6e23mvub"]
+
+[ext_resource type="PackedScene" uid="uid://0ik2vr45ekns" path="res://TestSprite2D.tscn" id="1_0411k"]
+
+[node name="Node" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 572.0
+offset_right = 725.0
+offset_bottom = 626.0
+text = "Get some hoes"
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_0411k")]
+position = Vector2(582, 336)
+
+[node name="Timer" type="Timer" parent="Sprite2D"]
+wait_time = 0.1
+autostart = true
+
+[connection signal="pressed" from="Button" to="Sprite2D" method="OnRequestingHoes"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Workbench"
-run/main_scene="uid://0ik2vr45ekns"
+run/main_scene="uid://c677w6e23mvub"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
