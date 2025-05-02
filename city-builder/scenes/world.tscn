@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs3xp5goeth88"]
+
+[ext_resource type="PackedScene" uid="uid://v15vd4nglpvt" path="res://city-builder/objects/temporary_tileset.tscn" id="1_1svod"]
+[ext_resource type="Script" uid="uid://ddv54hhfm2yw0" path="res://city-builder/scripts/camera.gd" id="2_3oh72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1svod"]
+size = Vector2(79, 1193.25)
+
+[node name="World" type="Node2D"]
+
+[node name="TemporaryTileset" parent="." instance=ExtResource("1_1svod")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(431, 255)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("2_3oh72")
+
+[node name="CameraBorderRight" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraBorderRight"]
+position = Vector2(532, -10)
+shape = SubResource("RectangleShape2D_1svod")
+
+[node name="CameraBorderTop" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraBorderTop"]
+position = Vector2(-15.625, -288)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1svod")
+
+[node name="CameraBorderLeft" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraBorderLeft"]
+position = Vector2(-539, -14)
+shape = SubResource("RectangleShape2D_1svod")
+
+[node name="CameraBorderBottom" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraBorderBottom"]
+position = Vector2(-4, 283)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1svod")
+
+[connection signal="mouse_entered" from="Camera2D/CameraBorderRight" to="Camera2D" method="_on_camera_border_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CameraBorderRight" to="Camera2D" method="_on_camera_border_right_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CameraBorderTop" to="Camera2D" method="_on_camera_border_top_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CameraBorderTop" to="Camera2D" method="_on_camera_border_top_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CameraBorderLeft" to="Camera2D" method="_on_camera_border_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CameraBorderLeft" to="Camera2D" method="_on_camera_border_left_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CameraBorderBottom" to="Camera2D" method="_on_camera_border_bottom_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CameraBorderBottom" to="Camera2D" method="_on_camera_border_bottom_mouse_exited"]
