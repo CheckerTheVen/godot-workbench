@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwtwx2fm0x2do"
-path="res://.godot/imported/iso-house.png-5d5afe68de15c7dc5d99523327cda566.ctex"
+uid="uid://svw7wj56gf5t"
+path="res://.godot/imported/birch.terrain-decor.png-3aebc89ecc134457018899aab90e1c8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://city-builder/res/tiles/iso-house.png"
-dest_files=["res://.godot/imported/iso-house.png-5d5afe68de15c7dc5d99523327cda566.ctex"]
+source_file="res://city-builder/res/tiles/birch.terrain-decor.png"
+dest_files=["res://.godot/imported/birch.terrain-decor.png-3aebc89ecc134457018899aab90e1c8b.ctex"]
 
 [params]
 

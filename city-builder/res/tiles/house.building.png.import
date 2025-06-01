@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfntt3vppcpei"
-path="res://.godot/imported/asphalt.png-80ce60a3903671bd5d1a4e206ef00c38.ctex"
+uid="uid://dp83mt2n61kto"
+path="res://.godot/imported/house.building.png-02e703664f9785b46e3665a886a8f2b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://city-builder/res/tiles/asphalt.png"
-dest_files=["res://.godot/imported/asphalt.png-80ce60a3903671bd5d1a4e206ef00c38.ctex"]
+source_file="res://city-builder/res/tiles/house.building.png"
+dest_files=["res://.godot/imported/house.building.png-02e703664f9785b46e3665a886a8f2b2.ctex"]
 
 [params]
 

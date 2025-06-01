@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ee2fm8becpj"
-path="res://.godot/imported/grass.png-1b47d917e1cf8bad6453ea4786eb3a4b.ctex"
+uid="uid://bbn2wuo8urlx2"
+path="res://.godot/imported/wheat.terrain-decor.png-c7186e8a716f29a91295bdf849ef7a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://city-builder/res/tiles/grass.png"
-dest_files=["res://.godot/imported/grass.png-1b47d917e1cf8bad6453ea4786eb3a4b.ctex"]
+source_file="res://city-builder/res/tiles/wheat.terrain-decor.png"
+dest_files=["res://.godot/imported/wheat.terrain-decor.png-c7186e8a716f29a91295bdf849ef7a57.ctex"]
 
 [params]
 
