@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6ue7plnfkgw"]
+
+[ext_resource type="Script" uid="uid://23hjo6v6r3y0" path="res://mainmenu.gd" id="1_igs2m"]
+[ext_resource type="Texture2D" uid="uid://bvhrmqrcb4mcc" path="res://res/background.ui.png" id="1_wgsso"]
+[ext_resource type="PackedScene" uid="uid://cpjih18yv68wr" path="res://gui/gameselector.tscn" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://dctw4pwvm3y00" path="res://res/title.ui.png" id="3_igs2m"]
+
+[sub_resource type="Animation" id="Animation_igs2m"]
+resource_name = "background.ui"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-384, -504), Vector2(0, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_3pujl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-617, -669)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7uvds"]
+_data = {
+&"RESET": SubResource("Animation_3pujl"),
+&"background.ui": SubResource("Animation_igs2m")
+}
+
+[node name="Mainmenu" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_igs2m")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -617.0
+offset_top = -669.0
+offset_right = -489.0
+offset_bottom = -573.0
+scale = Vector2(12, 12)
+texture = ExtResource("1_wgsso")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 565.0
+grow_horizontal = 2
+
+[node name="Title" type="TextureRect" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(500, 265)
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("3_igs2m")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="City Builder" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_d2nv2")]
+layout_mode = 2
+text = "City Builder"
+
+[node name="Options" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_d2nv2")]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_d2nv2")]
+layout_mode = 2
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7uvds")
+}
+autoplay = "background.ui"
+playback_auto_capture = false
+
+[connection signal="gui_input" from="VBoxContainer/VBoxContainer/City Builder" to="." method="_on_city_builder_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/VBoxContainer/Options" to="." method="_on_options_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_gui_input"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
