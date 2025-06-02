@@ -4,17 +4,10 @@
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.111
+anchor_bottom = 1.111
+offset_right = 0.12793
+offset_bottom = 0.0719604
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dpa8g")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 23.0
-offset_right = 63.0
-offset_bottom = 46.0
-text = "Test"

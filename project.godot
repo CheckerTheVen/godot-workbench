@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Workbench"
-run/main_scene="uid://dy438ko4rmbmj"
+run/main_scene="uid://b6ue7plnfkgw"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cgxqqj3o6vqw0"
 
 [display]
 
